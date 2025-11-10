@@ -1,30 +1,25 @@
-/*
- * @lc app=leetcode.cn id=2 lang=java
- *
- * [2] 两数相加
- */
+package leetcode;
 
-// @lc code=start
-/**
- * Definition for singly-linked list.
- * public class ListNode {
- *     int val;
- *     ListNode next;
- *     ListNode() {}
- *     ListNode(int val) { this.val = val; }
- *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
- * }
- */
-class Solution {
-    public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+public class Problem_0002_AddTwoNumbers {
+    // 不要提交这个类描述
+    public static class ListNode {
+        public int val;
+        public ListNode next;
+
+        public ListNode(int value) {
+            this.val = value;
+        }
+    }
+
+    public static ListNode addTwoNumbers(ListNode head1, ListNode head2) {
         int ca = 0;
-		int n1 = 0;
-		int n2 = 0;
-		int n = 0;
-		ListNode c1 = l1;
-		ListNode c2 = l2;
-		ListNode node = null;
-		ListNode pre = null;
+        int n1 = 0;
+        int n2 = 0;
+        int n = 0;
+        ListNode c1 = head1;
+        ListNode c2 = head2;
+        ListNode node = null;
+        ListNode pre = null;
         while (c1 != null || c2 != null) {
             n1 = c1 != null ? c1.val : 0;
             n2 = c2 != null ? c2.val : 0;
@@ -36,7 +31,7 @@ class Solution {
             c1 = c1 != null ? c1.next : null;
             c2 = c2 != null ? c2.next : null;
         }
-        if (ca > 0) {
+        if (ca == 1) {
             pre = node;
             node = new ListNode(1);
             node.next = pre;
@@ -56,5 +51,3 @@ class Solution {
         return pre;
     }
 }
-// @lc code=end
-
